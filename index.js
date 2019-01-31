@@ -1,12 +1,9 @@
-/**************************************************************
- * Sets a timeout to a future timestamp.
- * Returns a `stop` function that when called, returns the
-   number of milliseconds left to target timestamp.
- * Runs a callback when done.
-***************************************************************/
-function startTimer (futureTimestamp, callback) {
+/***************************
+ See README.md for details
+****************************/
+function setTimer (ms, callback) {
     const now = Date.now();
-    const ms = futureTimestamp - now;
+    const futureTimestamp = now + ms;
 
     const ref = setTimeout(() => {
         callback();
@@ -20,11 +17,10 @@ function startTimer (futureTimestamp, callback) {
 }
 
 function getTimeLeft (futureTimestamp) {
-    const TWO_SECONDS = 2000;
     const now = Date.now();
     const timeLeft = futureTimestamp - now;
 
     return timeLeft;
 }
 
-module.exports = startTimer;
+module.exports = setTimer;
