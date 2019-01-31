@@ -12,8 +12,8 @@ $ npm test
 ```
 
 ## Description
-The module is a timer function that accepts a future timestamp and runs a callback when time has come.  
-It returns a `stop` function that when called, clears the timeout but also returns how much time is left in milliseconds.
+The module is a timer function that accepts time in milliseconds and runs a callback when time has come using a simple `setTimeout`.  
+It returns a `stop` function that when called, clears the timeout but also returns how much time is left in ms.
 ```js
 const stop = setTimer(timestamp, callback)
 
